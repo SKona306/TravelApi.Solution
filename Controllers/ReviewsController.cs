@@ -7,6 +7,7 @@ using TravelApi.Models;
 
 namespace TravelApi.Controllers
 {
+  [ApiVersion("1.0")]
   [Route("api/[controller]")]
   [ApiController]
   public class ReviewsController : ControllerBase
@@ -103,5 +104,14 @@ namespace TravelApi.Controllers
 
       return NoContent();
     }
+  }
+
+  [ApiVersion( "2.0" )]
+  [ApiController]
+  [Route("api/Reviews2Controller" )]
+  public class Reviews2Controller : ControllerBase
+  {
+    [HttpGet]
+    public string Get() => "Hello world!";
   }
 }
